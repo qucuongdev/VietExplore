@@ -1,0 +1,68 @@
+{
+  "navigation": {
+    "brand": "VietExplore",
+    "home": "Trang chủ",
+    "provinces": "34 Tỉnh thành",
+    "destinations": "Điểm đến",
+    "explore": "Khám phá",
+    "search": "Tìm kiếm...",
+    "language": "Ngôn ngữ",
+    "menu": "Menu"
+  },
+  "home": {
+    "heroTitle": "Hành trình khám phá vẻ đẹp Việt Nam",
+    "heroSubtitle": "Cẩm nang du lịch biên soạn tỉ mỉ trên 34 đơn vị hành chính mới của Việt Nam",
+    "searchPlaceholder": "Tìm kiếm điểm đến, thành phố, danh thắng...",
+    "searchButton": "Tìm kiếm",
+    "categoriesTitle": "Khám phá theo trải nghiệm",
+    "featuredTitle": "Điểm đến nổi bật",
+    "provincesTitle": "34 Đơn vị tỉnh thành",
+    "provincesSubtitle": "6 thành phố trực thuộc Trung ương và 28 tỉnh thành theo mô hình hành chính mới 2025",
+    "viewAllProvinces": "Xem tất cả 34 tỉnh thành",
+    "viewAllDestinations": "Xem tất cả điểm đến",
+    "exploreMore": "Khám phá thêm"
+  },
+  "provinces": {
+    "title": "34 Tỉnh & Thành phố Việt Nam",
+    "subtitle": "Danh mục chính thức 6 thành phố trực thuộc Trung ương và 28 tỉnh",
+    "searchPlaceholder": "Tìm tỉnh hoặc thành phố...",
+    "cities": "Thành phố trực thuộc Trung ương",
+    "provincesList": "Các tỉnh",
+    "all": "Tất cả",
+    "destinationsCount": "{count} điểm đến",
+    "noDestinations": "Chưa có điểm đến được biên tập",
+    "emptyState": "Đang cập nhật dữ liệu điểm đến cho địa phương này"
+  },
+  "destinations": {
+    "title": "Điểm đến du lịch",
+    "subtitle": "Khám phá các danh lam thắng cảnh, di sản văn hóa và thiên nhiên kỳ vĩ",
+    "searchPlaceholder": "Tìm theo tên điểm đến...",
+    "allCategories": "Tất cả danh mục",
+    "allProvinces": "Tất cả tỉnh thành",
+    "filterByProvince": "Lọc theo tỉnh thành",
+    "filterByCategory": "Lọc theo danh mục",
+    "clearFilters": "Xóa bộ lọc",
+    "resultsFound": "Tìm thấy {count} điểm đến",
+    "noResults": "Không tìm thấy điểm đến nào phù hợp",
+    "noResultsHint": "Hãy thử tìm kiếm với từ khóa khác hoặc xóa bộ lọc",
+    "highlights": "Điểm nổi bật",
+    "location": "Vị trí",
+    "category": "Danh mục",
+    "related": "Điểm đến liên quan"
+  },
+  "footer": {
+    "tagline": "Tạp chí khám phá du lịch Việt Nam đương đại — Chất lượng biên tập và chuẩn mực địa lý.",
+    "quickLinks": "Liên kết nhanh",
+    "legalNotice": "Dữ liệu hành chính cập nhật theo Nghị quyết 2025 về sắp xếp đơn vị hành chính cấp tỉnh.",
+    "imageSources": "Nguồn ảnh & Bản quyền",
+    "copyright": "© 2025 VietExplore. Bản quyền nội dung thuộc về các tác giả."
+  },
+  "common": {
+    "back": "Quay lại",
+    "close": "Đóng",
+    "loading": "Đang tải...",
+    "notFound": "Không tìm thấy trang",
+    "notFoundDesc": "Địa chỉ bạn truy cập không tồn tại hoặc đã được chuyển dời.",
+    "backHome": "Về trang chủ"
+  }
+}

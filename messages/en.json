@@ -1,0 +1,68 @@
+{
+  "navigation": {
+    "brand": "VietExplore",
+    "home": "Home",
+    "provinces": "34 Provinces",
+    "destinations": "Destinations",
+    "explore": "Explore",
+    "search": "Search...",
+    "language": "Language",
+    "menu": "Menu"
+  },
+  "home": {
+    "heroTitle": "Discover the Timeless Beauty of Vietnam",
+    "heroSubtitle": "An editorial discovery guide across Vietnam's 34 newly organized provinces and cities",
+    "searchPlaceholder": "Search destinations, cities, attractions...",
+    "searchButton": "Search",
+    "categoriesTitle": "Explore by Experience",
+    "featuredTitle": "Featured Destinations",
+    "provincesTitle": "34 Provincial Entities",
+    "provincesSubtitle": "6 centrally governed cities and 28 provinces following the 2025 administrative reorganization",
+    "viewAllProvinces": "View all 34 provinces",
+    "viewAllDestinations": "View all destinations",
+    "exploreMore": "Explore more"
+  },
+  "provinces": {
+    "title": "34 Provinces & Cities of Vietnam",
+    "subtitle": "Official directory of 6 centrally governed cities and 28 provinces",
+    "searchPlaceholder": "Search province or city...",
+    "cities": "Centrally Governed Cities",
+    "provincesList": "Provinces",
+    "all": "All",
+    "destinationsCount": "{count} destinations",
+    "noDestinations": "No destinations curated yet",
+    "emptyState": "Destination data is currently being curated for this region"
+  },
+  "destinations": {
+    "title": "Travel Destinations",
+    "subtitle": "Explore natural wonders, cultural heritage, and breathtaking landscapes",
+    "searchPlaceholder": "Search by destination name...",
+    "allCategories": "All Categories",
+    "allProvinces": "All Provinces",
+    "filterByProvince": "Filter by province",
+    "filterByCategory": "Filter by category",
+    "clearFilters": "Clear filters",
+    "resultsFound": "{count} destinations found",
+    "noResults": "No matching destinations found",
+    "noResultsHint": "Try searching with different keywords or clearing your filters",
+    "highlights": "Highlights",
+    "location": "Location",
+    "category": "Category",
+    "related": "Related Destinations"
+  },
+  "footer": {
+    "tagline": "A contemporary travel discovery magazine for Vietnam — Editorial quality and geographic integrity.",
+    "quickLinks": "Quick Links",
+    "legalNotice": "Administrative data updated according to the 2025 resolution on provincial administrative reorganization.",
+    "imageSources": "Image Provenance & Licenses",
+    "copyright": "© 2025 VietExplore. Content copyright belongs to respective authors."
+  },
+  "common": {
+    "back": "Back",
+    "close": "Close",
+    "loading": "Loading...",
+    "notFound": "Page Not Found",
+    "notFoundDesc": "The page you are looking for does not exist or has been moved.",
+    "backHome": "Back to Home"
+  }
+}
