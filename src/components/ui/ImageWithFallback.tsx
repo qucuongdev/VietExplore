@@ -9,6 +9,7 @@ interface ImageWithFallbackProps extends Omit<ImageProps, 'src' | 'alt'> {
   alt: string;
   fallbackTitle?: string;
   className?: string;
+  objectFit?: 'cover' | 'contain';
 }
 
 export default function ImageWithFallback({
@@ -16,6 +17,7 @@ export default function ImageWithFallback({
   alt,
   fallbackTitle,
   className = '',
+  objectFit = 'cover',
   fill,
   width,
   height,
@@ -69,7 +71,7 @@ export default function ImageWithFallback({
           setHasError(true);
         }}
         className={`transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'} ${
-          fill ? 'object-cover w-full h-full' : ''
+          fill ? `${objectFit === 'contain' ? 'object-contain' : 'object-cover'} w-full h-full` : ''
         }`}
         {...rest}
       />

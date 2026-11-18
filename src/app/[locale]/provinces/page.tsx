@@ -4,6 +4,13 @@ import ProvinceExplorerTabs from '@/components/provinces/ProvinceExplorerTabs';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { MapPin } from 'lucide-react';
 import { Locale } from '@/types/content';
+import { createPageMetadata } from '@/lib/metadata';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'provinces' });
+  return createPageMetadata({ locale, path: '/provinces', title: t('title'), description: t('subtitle') });
+}
 
 export default async function ProvincesDirectoryPage({
   params,
