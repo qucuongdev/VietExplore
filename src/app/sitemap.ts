@@ -1,8 +1,11 @@
 import { MetadataRoute } from 'next';
 import { getAllProvinces } from '@/data/repositories/provinceRepository';
 import { getAllDestinations } from '@/data/repositories/destinationRepository';
+import { getBlogSitemapEntries } from '@/data/repositories/blogSitemapRepository';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export const dynamic = 'force-dynamic';
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://vietexplore.vercel.app';
   const locales = ['vi', 'en'];
 
@@ -37,6 +40,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: 0.7,
+      },
+      {
+        url: `${baseUrl}/${locale}/blog`,
+        changeFrequency: 'weekly',
+        priority: 0.8,
       }
     );
 
@@ -61,5 +69,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
+  for (const post of await getBlogSitemapEntries()) {
+    entries.push({ url: `${baseUrl}/${post.locale}/blog/${post.slug}`, lastModified: post.updated_at, changeFrequency: 'weekly', priority: 0.7 });
+  }
   return entries;
 }
