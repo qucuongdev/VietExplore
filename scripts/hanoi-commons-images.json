@@ -1,0 +1,641 @@
+{
+  "ho_guom_turtle_tower": {
+    "label": "Tháp Rùa Hồ Gươm",
+    "images": [
+      {
+        "title": "Hoan kiem lake turtle tower hanoi 2007 01.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Hoan_kiem_lake_turtle_tower_hanoi_2007_01.jpg",
+        "artist": "Rolf Müller (User:Rolfmueller)",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      {
+        "title": "Tháp Rùa 5.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Th%C3%A1p_R%C3%B9a_5.jpg",
+        "artist": "Jon Rawlinson",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "title": "Turtle Tower, Hoan Kiem Lake, Hanoi (3531374428).jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Turtle_Tower%2C_Hoan_Kiem_Lake%2C_Hanoi_%283531374428%29.jpg",
+        "artist": "Dennis G. Jarvis",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      {
+        "title": "DGJ 1873B - Turtle Tower, Sword Lake, Hanoi (3530561565).jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/df/DGJ_1873B_-_Turtle_Tower%2C_Sword_Lake%2C_Hanoi_%283530561565%29.jpg",
+        "artist": "Dennis G. Jarvis",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      }
+    ]
+  },
+  "ho_guom_the_huc": {
+    "label": "Cầu Thê Húc",
+    "images": [
+      {
+        "title": "Hoan kiem lake huc bridge hanoi 2007 01.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Hoan_kiem_lake_huc_bridge_hanoi_2007_01.jpg",
+        "artist": "Rolf Müller (User:Rolfmueller)",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      {
+        "title": "Thê Húc bridge with flags.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Th%C3%AA_H%C3%BAc_bridge_with_flags.jpg",
+        "artist": "josh jackson",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "title": "The Huc Bridge, Hanoi, Vietnam.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/The_Huc_Bridge%2C_Hanoi%2C_Vietnam.jpg",
+        "artist": "Jon Phillipo",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      {
+        "title": "Huc bridge, Vietnam, Hanoi.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Huc_bridge%2C_Vietnam%2C_Hanoi.jpg",
+        "artist": "Yun Huang Yong",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      }
+    ]
+  },
+  "hanoi_old_quarter": {
+    "label": "Phố Cổ Hà Nội",
+    "images": [
+      {
+        "title": "Street vendors in old quarter, Hanoi, Vietnam.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Street_vendors_in_old_quarter%2C_Hanoi%2C_Vietnam.jpg",
+        "artist": "yeowatzup",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "title": "Old Quarter street scene, Hanoi (5) (26720959079).jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Old_Quarter_street_scene%2C_Hanoi_%285%29_%2826720959079%29.jpg",
+        "artist": "Richard Mortel from Riyadh, Saudi Arabia",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "title": "Old Quarter street scene, Hanoi (6) (38496778801).jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Old_Quarter_street_scene%2C_Hanoi_%286%29_%2838496778801%29.jpg",
+        "artist": "Richard Mortel from Riyadh, Saudi Arabia",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "title": "Old Quarter street scene, Hanoi (7) (24624495318).jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Old_Quarter_street_scene%2C_Hanoi_%287%29_%2824624495318%29.jpg",
+        "artist": "Richard Mortel from Riyadh, Saudi Arabia",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      }
+    ]
+  },
+  "hanoi_egg_coffee": {
+    "label": "Cà phê trứng Hà Nội",
+    "images": [
+      {
+        "title": "Vietnamese Egg Coffee (8704422450).jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Vietnamese_Egg_Coffee_%288704422450%29.jpg",
+        "artist": "Migle",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      {
+        "title": "Egg Coffee (6923068614).jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Egg_Coffee_%286923068614%29.jpg",
+        "artist": "David McKelvey from Brisbane, Australia",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "title": "Cà phê trứng.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/22/C%C3%A0_ph%C3%AA_tr%E1%BB%A9ng.jpg",
+        "artist": "travel oriented",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      {
+        "title": "Egg Coffee at Cafe Giảng, Hà Nội, Vietnam.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Egg_Coffee_at_Cafe_Gi%E1%BA%A3ng%2C_H%C3%A0_N%E1%BB%99i%2C_Vietnam.jpg",
+        "artist": "travel oriented from Manila, Philippines",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      }
+    ]
+  },
+  "hanoi_pho_bo": {
+    "label": "Phở bò Hà Nội",
+    "images": [
+      {
+        "title": "Vietnamese Pho Beef Noodles 2007.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Vietnamese_Pho_Beef_Noodles_2007.jpg",
+        "artist": "Kham Tran",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+      },
+      {
+        "title": "Beef Pho in Hong Kong.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Beef_Pho_in_Hong_Kong.jpg",
+        "artist": "Ceeseven",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "title": "2016.10.14.133502 Noodle soup beef Pho Bac Vietnamese restaurant Seattle Washington USA.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/2016.10.14.133502_Noodle_soup_beef_Pho_Bac_Vietnamese_restaurant_Seattle_Washington_USA.jpg",
+        "artist": "Hermann Luyken",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "title": "Beef-pho-vietnamese-soup.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Beef-pho-vietnamese-soup.jpg",
+        "artist": "de:Benutzer:Phoks",
+        "license": "Copyrighted free use",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    ]
+  },
+  "van_mieu_khue_van_cac": {
+    "label": "Khuê Văn Các Văn Miếu",
+    "images": [
+      {
+        "title": "Constellation of Literature pavilion - Temple of Literature, Hanoi - DSC04693.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Constellation_of_Literature_pavilion_-_Temple_of_Literature%2C_Hanoi_-_DSC04693.JPG",
+        "artist": "Daderot",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "title": "Constellation of Literature pavilion - Temple of Literature, Hanoi - DSC04688.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Constellation_of_Literature_pavilion_-_Temple_of_Literature%2C_Hanoi_-_DSC04688.JPG",
+        "artist": "Daderot",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "title": "Constellation of Literature pavilion - Temple of Literature, Hanoi - DSC04553.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Constellation_of_Literature_pavilion_-_Temple_of_Literature%2C_Hanoi_-_DSC04553.JPG",
+        "artist": "Daderot",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "title": "Constellation of Literature pavilion - Temple of Literature, Hanoi - DSC04576.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Constellation_of_Literature_pavilion_-_Temple_of_Literature%2C_Hanoi_-_DSC04576.JPG",
+        "artist": "Daderot",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      }
+    ]
+  },
+  "van_mieu_doctor_stelae": {
+    "label": "Bia Tiến Sĩ Văn Miếu",
+    "images": [
+      {
+        "title": "Stelae of Doctors - Temple of Literature, Hanoi - DSC04685.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Stelae_of_Doctors_-_Temple_of_Literature%2C_Hanoi_-_DSC04685.JPG",
+        "artist": "Daderot",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "title": "Stelae of Doctors - Temple of Literature, Hanoi - DSC04569.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Stelae_of_Doctors_-_Temple_of_Literature%2C_Hanoi_-_DSC04569.JPG",
+        "artist": "Daderot",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "title": "Stelae of Doctors - Temple of Literature, Hanoi - DSC04686.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Stelae_of_Doctors_-_Temple_of_Literature%2C_Hanoi_-_DSC04686.JPG",
+        "artist": "Daderot",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "title": "Stelae of Doctors - Temple of Literature, Hanoi - DSC04571.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Stelae_of_Doctors_-_Temple_of_Literature%2C_Hanoi_-_DSC04571.JPG",
+        "artist": "Daderot",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      }
+    ]
+  },
+  "van_mieu_gate": {
+    "label": "Cổng Đại Trung Môn Văn Miếu",
+    "images": [
+      {
+        "title": "Main gate - Temple of Literature, Hanoi - DSC04529.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Main_gate_-_Temple_of_Literature%2C_Hanoi_-_DSC04529.JPG",
+        "artist": "Daderot",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "title": "Main gate - Temple of Literature, Hanoi - DSC04519.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Main_gate_-_Temple_of_Literature%2C_Hanoi_-_DSC04519.JPG",
+        "artist": "Daderot",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "title": "Main gate - Temple of Literature, Hanoi - DSC04534.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Main_gate_-_Temple_of_Literature%2C_Hanoi_-_DSC04534.JPG",
+        "artist": "Daderot",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "title": "Pillars by the main gate - Temple of Literature, Hanoi - DSC04522.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Pillars_by_the_main_gate_-_Temple_of_Literature%2C_Hanoi_-_DSC04522.JPG",
+        "artist": "Daderot",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      }
+    ]
+  },
+  "hoang_thanh_doan_mon": {
+    "label": "Cổng Đoan Môn Hoàng Thành",
+    "images": [
+      {
+        "title": "Doan Mon Gate 2.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Doan_Mon_Gate_2.jpg",
+        "artist": "Christophe95",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "title": "Doan Mon Gate 3.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Doan_Mon_Gate_3.jpg",
+        "artist": "Christophe95",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "title": "Doan Mon Gate 1.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Doan_Mon_Gate_1.jpg",
+        "artist": "Christophe95",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "title": "Đoan Môn.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/54/%C4%90oan_M%C3%B4n.JPG",
+        "artist": "Duyphuong (thảo luận)",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+      }
+    ]
+  },
+  "hoang_thanh_flag_tower": {
+    "label": "Cột Cờ Hà Nội",
+    "images": [
+      {
+        "title": "Flag tower, Hanoi.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Flag_tower%2C_Hanoi.jpg",
+        "artist": "Chinasaur",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      {
+        "title": "Flag Tower of Hanoi, 1812 (1) (37608539335).jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Flag_Tower_of_Hanoi%2C_1812_%281%29_%2837608539335%29.jpg",
+        "artist": "Richard Mortel from Riyadh, Saudi Arabia",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "title": "Flag Tower of Hanoi, 1812 (4) (24623083838).jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Flag_Tower_of_Hanoi%2C_1812_%284%29_%2824623083838%29.jpg",
+        "artist": "Richard Mortel from Riyadh, Saudi Arabia",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "title": "Flag Tower of Hanoi 1.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Flag_Tower_of_Hanoi_1.jpg",
+        "artist": "Christophe95",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  },
+  "hoang_thanh_kinh_thien": {
+    "label": "Điện Kính Thiên Hoàng Thành",
+    "images": [
+      {
+        "title": "Huế citadel (5706257243).jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Hu%E1%BA%BF_citadel_%285706257243%29.jpg",
+        "artist": "Andrea Schaffer from Sydney, Australia",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "title": "Huế citadel (5679825670).jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Hu%E1%BA%BF_citadel_%285679825670%29.jpg",
+        "artist": "Andrea Schaffer from Sydney, Australia",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "title": "Huế citadel (5679829052).jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Hu%E1%BA%BF_citadel_%285679829052%29.jpg",
+        "artist": "Andrea Schaffer from Sydney, Australia",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "title": "Huế citadel (5706824258).jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Hu%E1%BA%BF_citadel_%285706824258%29.jpg",
+        "artist": "Andrea Schaffer from Sydney, Australia",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      }
+    ]
+  },
+  "tran_quoc_pagoda": {
+    "label": "Chùa Trấn Quốc",
+    "images": [
+      {
+        "title": "Tran Quoc Pagoda, Hanoi, Vietnam, 20240123 1212 3310.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Tran_Quoc_Pagoda%2C_Hanoi%2C_Vietnam%2C_20240123_1212_3310.jpg",
+        "artist": "Jakub Hałun",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+      },
+      {
+        "title": "Tran Quoc Pagoda, Hanoi, Vietnam, 20240123 1212 3307.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Tran_Quoc_Pagoda%2C_Hanoi%2C_Vietnam%2C_20240123_1212_3307.jpg",
+        "artist": "Jakub Hałun",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+      },
+      {
+        "title": "Tran Quoc Pagoda, Hanoi, Vietnam, 20240123 1211c 3302.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Tran_Quoc_Pagoda%2C_Hanoi%2C_Vietnam%2C_20240123_1211c_3302.jpg",
+        "artist": "Jakub Hałun",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+      },
+      {
+        "title": "Tran Quoc Pagoda, Hanoi, Vietnam, 20240123 1623 3392.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Tran_Quoc_Pagoda%2C_Hanoi%2C_Vietnam%2C_20240123_1623_3392.jpg",
+        "artist": "Jakub Hałun",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+      }
+    ]
+  },
+  "west_lake_hanoi": {
+    "label": "Hoàng hôn Hồ Tây",
+    "images": [
+      {
+        "title": "West lake 11-12-2016.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/West_lake_11-12-2016.jpg",
+        "artist": "Dream2901",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "title": "Hoang hon tren Ho Tay.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Hoang_hon_tren_Ho_Tay.jpg",
+        "artist": "vi:User:Rungbachduong",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      {
+        "title": "Newone - chiều hè Hồ Tây 02.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Newone_-_chi%E1%BB%81u_h%C3%A8_H%E1%BB%93_T%C3%A2y_02.jpg",
+        "artist": "Newone",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "title": "Newone - chiều hè Hồ Tây 03.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Newone_-_chi%E1%BB%81u_h%C3%A8_H%E1%BB%93_T%C3%A2y_03.jpg",
+        "artist": "Newone",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  },
+  "st_joseph_cathedral": {
+    "label": "Nhà Thờ Lớn Hà Nội",
+    "images": [
+      {
+        "title": "St Joseph Cathedral Hanoi 0376.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/St_Joseph_Cathedral_Hanoi_0376.JPG",
+        "artist": "Gryffindor",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      {
+        "title": "St Joseph Cathedral Hanoi 0377.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/St_Joseph_Cathedral_Hanoi_0377.JPG",
+        "artist": "Gryffindor",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      {
+        "title": "St Joseph Cathedral Hanoi 0383.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/34/St_Joseph_Cathedral_Hanoi_0383.JPG",
+        "artist": "Gryffindor",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      {
+        "title": "St. Joseph's Cathedral - Hanoi, Vietnam.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/St._Joseph%27s_Cathedral_-_Hanoi%2C_Vietnam.jpg",
+        "artist": "Arno Kohlem",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  },
+  "long_bien_bridge": {
+    "label": "Cầu Long Biên",
+    "images": [
+      {
+        "title": "LONG BIEN BRIDGE HANOI VIETNAM FEB 2012.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/LONG_BIEN_BRIDGE_HANOI_VIETNAM_FEB_2012.jpg",
+        "artist": "calflier001",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      {
+        "title": "LONG BIEN BRIDGE HANOI VIETNAM FEB 2012 (6865894882).jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/LONG_BIEN_BRIDGE_HANOI_VIETNAM_FEB_2012_%286865894882%29.jpg",
+        "artist": "calflier001",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      {
+        "title": "LONG BIEN BRIDGE HANOI VIETNAM FEB 2012 (7011987601).jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/LONG_BIEN_BRIDGE_HANOI_VIETNAM_FEB_2012_%287011987601%29.jpg",
+        "artist": "calflier001",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      {
+        "title": "LONG BIEN BRIDGE HANOI VIETNAM FEB 2012 (6865879448).jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/LONG_BIEN_BRIDGE_HANOI_VIETNAM_FEB_2012_%286865879448%29.jpg",
+        "artist": "calflier001",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      }
+    ]
+  },
+  "one_pillar_pagoda": {
+    "label": "Chùa Một Cột",
+    "images": [
+      {
+        "title": "One Pillar Pagoda Hanoi Vietnam.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/One_Pillar_Pagoda_Hanoi_Vietnam.jpg",
+        "artist": "Thomas Schoch",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5"
+      },
+      {
+        "title": "One Pillar Pagoda - Hanoi, Vietnam - DSC03500.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/One_Pillar_Pagoda_-_Hanoi%2C_Vietnam_-_DSC03500.JPG",
+        "artist": "Daderot",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "title": "One Pillar Pagoda - Hanoi, Vietnam - DSC03503.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/72/One_Pillar_Pagoda_-_Hanoi%2C_Vietnam_-_DSC03503.JPG",
+        "artist": "Daderot",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "title": "One Pillar Pagoda Hanoi.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/One_Pillar_Pagoda_Hanoi.jpg",
+        "artist": "Staffan Scherz",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      }
+    ]
+  },
+  "ho_chi_minh_mausoleum": {
+    "label": "Lăng Chủ tịch Hồ Chí Minh",
+    "images": [
+      {
+        "title": "Ho chi minh mausoleum.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Ho_chi_minh_mausoleum.jpg",
+        "artist": "Gregor Dodson",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      {
+        "title": "Hanoi Vietnam Mausoleum-of-Ho-Chi-Minh-01.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Hanoi_Vietnam_Mausoleum-of-Ho-Chi-Minh-01.jpg",
+        "artist": "CEphoto, Uwe Aranas",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      {
+        "title": "Hanoi Vietnam Mausoleum-of-Ho-Chi-Minh-02.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Hanoi_Vietnam_Mausoleum-of-Ho-Chi-Minh-02.jpg",
+        "artist": "CEphoto, Uwe Aranas",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      {
+        "title": "Hanoi Vietnam Mausoleum-of-Ho-Chi-Minh-03.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Hanoi_Vietnam_Mausoleum-of-Ho-Chi-Minh-03.jpg",
+        "artist": "CEphoto, Uwe Aranas",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      }
+    ]
+  },
+  "duong_lam_village": {
+    "label": "Làng Cổ Đường Lâm",
+    "images": [
+      {
+        "title": "The-ancient-village-3358830.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/The-ancient-village-3358830.jpg",
+        "artist": "Quangpraha",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      }
+    ]
+  },
+  "ba_vi_national_park": {
+    "label": "Vườn Quốc Gia Ba Vì",
+    "images": [
+      {
+        "title": "Nha co Ba Vi.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Nha_co_Ba_Vi.JPG",
+        "artist": "Viethavvh at vi.wikipedia",
+        "license": "Public domain",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      {
+        "title": "Vuon QG Ba Vi.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Vuon_QG_Ba_Vi.JPG",
+        "artist": "Viethavvh at vi.wikipedia",
+        "license": "Public domain",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      {
+        "title": "Ba Vì National Park, foggy road.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Ba_V%C3%AC_National_Park%2C_foggy_road.jpg",
+        "artist": "[Tycho]  talk , http://shansov.net",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      {
+        "title": "Ba-Vi7.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/92/Ba-Vi7.jpg",
+        "artist": "Steven C. Price",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  },
+  "bat_trang_pottery": {
+    "label": "Gốm Bát Tràng",
+    "images": [
+      {
+        "title": "Bat-Trang-Ceramic-Village8.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Bat-Trang-Ceramic-Village8.jpg",
+        "artist": "Steven C. Price",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "title": "Bat-Trang-Ceramic-Village10.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Bat-Trang-Ceramic-Village10.jpg",
+        "artist": "Steven C. Price",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "title": "Bat-Trang-Ceramic-Village7.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Bat-Trang-Ceramic-Village7.jpg",
+        "artist": "Steven C. Price",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "title": "Bat-Trang-Ceramic-Village5.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Bat-Trang-Ceramic-Village5.jpg",
+        "artist": "Steven C. Price",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  }
+}

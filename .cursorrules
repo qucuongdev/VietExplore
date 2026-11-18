@@ -1,0 +1,97 @@
+# VietExplore — Project Rules and Conventions
+
+## 1. Package Manager — STRICT RULE
+- **MANDATORY**: Exclusively use `pnpm` for all operations.
+- **FORBIDDEN**: NEVER run `npm`, `npx`, `yarn`, or `bun`.
+- To run package binaries or one-off tools, use `pnpm dlx <package>` instead of `npx <package>`.
+- To add dependencies: `pnpm add <pkg>` or `pnpm add -D <pkg>`.
+- To run scripts: `pnpm dev`, `pnpm build`, `pnpm test`, `pnpm lint`.
+
+---
+
+## 2. Architecture & Component Standards
+- **Server Components by Default**: All components and route files in `src/app/` are React Server Components (RSC) unless interactivity is required.
+- **Client Components (`"use client"`)**:
+  - Push `"use client"` as deep as possible into the leaf nodes of the component tree (e.g. search input, filter chips, favorite button, language switcher).
+  - Never mark an entire page or layout with `"use client"` unless strictly necessary.
+  - Pass Server Components as `children` or props into Client Components to retain server-rendering benefits.
+- **Routing**:
+  - App Router with `[locale]` dynamic route segment.
+  - Localization middleware MUST be at `src/middleware.ts` (NOT `proxy.ts`).
+  - Route segments are always in English (e.g., `/[locale]/provinces/[slug]`, `/[locale]/destinations/[slug]`).
+
+---
+
+## 3. TypeScript & Data Integrity
+- **Strict Typing**: Zero tolerance for `any`. Use `unknown` or generics when types are dynamic.
+- **Data Fixtures & Repositories**:
+  - Keep typed fixtures in `src/data/` (`provinces.ts`, `destinations.ts`, `categories.ts`).
+  - Provide a clean data-access layer in `src/data/repositories/` so that components never query raw fixtures directly.
+- **Type Definitions**:
+  - Use `interface` for object shapes, component props, and database entities.
+  - Use `type` for unions, primitives, and intersection types.
+  - Do NOT use TypeScript `enum`; prefer string unions or `as const` object maps.
+
+---
+
+## 4. UI / UX, Styling & Design System
+- **Tailwind CSS**:
+  - Use utility classes and `cn()` (`clsx` + `tailwind-merge`) helper.
+  - Mobile-first approach (`sm:`, `md:`, `lg:`).
+  - Use semantic design tokens configured in CSS variables:
+    - Warm cream background (`#F8F7F3`)
+    - Deep charcoal text (`#202723`)
+    - Forest green accent (`#194D42`)
+    - Terracotta secondary accent (`#C87956`)
+- **Shadcn UI & Radix**:
+  - Use accessible Radix primitives selectively via `shadcn/ui`.
+  - Iconography: Use `lucide-react`.
+- **Accessibility (a11y)**:
+  - Contrast compliant text, visible keyboard focus rings, semantic HTML tags.
+  - Dialogs and drawers must handle `Escape` and focus trapping.
+  - Full support for `prefers-reduced-motion`.
+- **No Dummy UI**:
+  - Every visible button and filter must be functional or intentionally disabled with a clear reason.
+  - No fake social proof, no fabricated prices, ratings, or fake attraction counts.
+
+---
+
+## 5. Testing & Verification Standards (Vitest + React Testing Library)
+- **Unit Tests**:
+  - Test business logic, utility helpers (especially Vietnamese diacritic removal `removeDiacritics`), data repository getters, and custom hooks.
+  - Test data fixture integrity (validate 34 provinces, valid foreign keys, non-empty localized strings).
+- **Component Tests**:
+  - Test key interactions: language switcher, search input triggering debounce, filter chip toggles, reset filter state.
+  - Follow `vitest` conventions (see `.agents/skills/vitest/SKILL.md`).
+- **All test commands MUST be run with pnpm**:
+  - `pnpm test` or `pnpm vitest run`.
+
+---
+
+## 6. Development Workflow & Git Standards
+- **Spec-Driven**:
+  - Follow the phase-by-phase implementation gates outlined in `vietexplore-mvp-ai-prompt.md`.
+  - Validate each phase gate before moving to the next.
+- **Git & Commits**:
+  - Use Conventional Commits (`feat:`, `fix:`, `refactor:`, `test:`, `docs:`, `chore:`).
+  - All commit messages and branch names in English.
+
+---
+
+## 7. Internationalization (i18n) & Vietnamese Search
+- **next-intl**:
+  - Supported locales: `vi` and `en`.
+  - Interface labels in `messages/vi.json` and `messages/en.json`.
+  - Dynamic content (province/destination titles & summaries) comes from `LocalizedText` in data fixtures, not translation files.
+  - Remember language preference via cookies (`NEXT_LOCALE`), preserving current route slug/query on switch.
+- **Vietnamese Diacritic-Insensitive Search**:
+  - Must correctly match both accented and non-accented inputs (e.g. `Đà Lạt` matches `da lat`, `Hà Nội` matches `ha noi`).
+  - MUST properly handle the Vietnamese letter `đ`/`Đ` mapping to `d`/`D`.
+
+---
+
+## 6. Naming & File Conventions
+- **Folders and route segments**: lowercase kebab-case (e.g. `destinations/`, `[locale]/`).
+- **Component files**: PascalCase (e.g. `DestinationCard.tsx`).
+- **Utilities and hooks**: camelCase (e.g. `removeDiacritics.ts`, `useFilter.ts`).
+- **Identifiers**: 100% in English (variable names, functions, type names, git commits).
