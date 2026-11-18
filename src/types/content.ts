@@ -40,6 +40,7 @@ export interface TravelogueStop {
   title: LocalizedText;
   narrative: LocalizedText;
   tip?: LocalizedText;
+  image?: ImageAsset;
 }
 
 export interface Destination {

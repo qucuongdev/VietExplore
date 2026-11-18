@@ -6,6 +6,7 @@ import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { Badge } from '@/components/ui/Badge';
 import DestinationGallery from '@/components/destinations/DestinationGallery';
 import DestinationCard from '@/components/destinations/DestinationCard';
+import ImageWithFallback from '@/components/ui/ImageWithFallback';
 import { MapPin, Navigation, Sparkles, ShieldCheck, ArrowLeft, Clock, Lightbulb, Compass, Film } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import { Locale } from '@/types/content';
@@ -162,6 +163,18 @@ export default async function DestinationDetailPage({
                           <p className="text-xs sm:text-sm text-[#5B665F] leading-relaxed mb-3">
                             {stop.narrative[currentLocale] || stop.narrative.vi}
                           </p>
+                          {stop.image && (
+                            <div className="relative aspect-16/9 rounded-xl overflow-hidden mb-3 border border-[#E2DDD5]/80 shadow-xs">
+                              <ImageWithFallback
+                                src={stop.image.src}
+                                alt={stop.image.alt[currentLocale] || stop.title[currentLocale]}
+                                fallbackTitle={stop.title[currentLocale]}
+                                fill
+                                className="w-full h-full object-cover"
+                                sizes="(max-width: 768px) 100vw, 600px"
+                              />
+                            </div>
+                          )}
                           {stop.tip && (
                             <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white text-xs text-[#194D42] font-medium border border-[#E2DDD5]/60">
                               <Lightbulb className="w-3.5 h-3.5 text-[#C87956] shrink-0" />
