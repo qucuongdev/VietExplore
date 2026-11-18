@@ -8,6 +8,9 @@ export async function refreshAuthSession(request: NextRequest) {
   const config = getSupabaseConfig();
   if (!config) return response;
 
+  const hasAuthCookies = request.cookies.getAll().some((cookie) => cookie.name.startsWith('sb-'));
+  if (!hasAuthCookies) return response;
+
   const supabase = createServerClient<Database>(config.url, config.key, {
     cookies: {
       getAll: () => request.cookies.getAll(),

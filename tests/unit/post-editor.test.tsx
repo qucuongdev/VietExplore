@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { NextIntlClientProvider } from 'next-intl';
 import PostEditor from '@/components/admin/PostEditor';
@@ -12,6 +12,15 @@ const mocks = vi.hoisted(() => ({
 vi.mock('@/actions/posts', () => ({ savePost: mocks.save }));
 vi.mock('@/i18n/navigation', () => ({ Link: ({ children, href }: { children: React.ReactNode; href: string }) => <a href={href}>{children}</a> }));
 vi.mock('@/lib/supabase/client', () => ({ createSupabaseBrowserClient: vi.fn() }));
+
+beforeEach(() => {
+  vi.spyOn(HTMLDialogElement.prototype, 'showModal').mockImplementation(function (this: HTMLDialogElement) {
+    this.setAttribute('open', '');
+  });
+  vi.spyOn(HTMLDialogElement.prototype, 'close').mockImplementation(function (this: HTMLDialogElement) {
+    this.removeAttribute('open');
+  });
+});
 
 afterEach(() => { cleanup(); vi.clearAllMocks(); });
 
@@ -54,5 +63,77 @@ describe('Block editor interactions', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Publish story' }));
     expect(screen.getByRole('alert')).toHaveTextContent(en.editor.invalid);
     expect(mocks.save).not.toHaveBeenCalled();
+  });
+  it('opens AI prompt generator, updates prompt dynamically, and imports JSON structure', async () => {
+    editor();
+    fireEvent.click(screen.getAllByRole('button', { name: en.editor.aiPromptButton })[0]);
+    expect(screen.getByRole('dialog', { name: en.editor.aiPromptTitle })).toBeInTheDocument();
+
+    const promptText = screen.getByText(/You are an acclaimed travel writer/);
+    expect(promptText).toBeInTheDocument();
+    expect(promptText.textContent).toContain('[ENTER YOUR STORY TOPIC HERE]');
+
+    const topicInput = screen.getByLabelText(new RegExp(en.editor.aiTopic));
+    fireEvent.change(topicInput, { target: { value: 'Ha Giang Loop Adventure' } });
+    expect(promptText.textContent).toContain('Ha Giang Loop Adventure');
+
+    fireEvent.click(screen.getByRole('button', { name: en.editor.aiTabImport }));
+
+    const jsonArea = screen.getByLabelText(en.editor.aiImportLabel);
+    const samplePayload = JSON.stringify({
+      title: 'Ha Giang Loop: A Journey Beyond Clouds',
+      slug: 'ha-giang-loop-journey-beyond-clouds',
+      excerpt: 'Riding the winding passes of Dong Van and Ma Pi Leng is an unforgettable adventure.',
+      tags: ['Ha Giang', 'Motorbike', 'Adventure'],
+      content: [
+        { type: 'heading', level: 2, text: 'The Majesty of Ma Pi Leng' },
+        { type: 'paragraph', text: 'Perched thousands of meters above the emerald Nho Que River...' }
+      ]
+    });
+    fireEvent.change(jsonArea, { target: { value: samplePayload } });
+
+    fireEvent.click(screen.getByRole('button', { name: en.editor.aiImportSubmit }));
+
+    await waitFor(() => {
+      expect(screen.getByRole('textbox', { name: 'Story title' })).toHaveValue('Ha Giang Loop: A Journey Beyond Clouds');
+      expect(screen.getByRole('textbox', { name: 'Story URL' })).toHaveValue('ha-giang-loop-journey-beyond-clouds');
+      expect(screen.getByRole('textbox', { name: 'Introduction' })).toHaveValue('Riding the winding passes of Dong Van and Ma Pi Leng is an unforgettable adventure.');
+      expect(screen.getByRole('textbox', { name: /Topic tags/ })).toHaveValue('Ha Giang, Motorbike, Adventure');
+    });
+  });
+  it('opens import dialog directly via Import JSON button and extracts JSON from full conversational AI reply', async () => {
+    editor();
+    fireEvent.click(screen.getAllByRole('button', { name: en.editor.aiImportButton })[0]);
+    expect(screen.getByRole('dialog', { name: en.editor.aiTabImport })).toBeInTheDocument();
+
+    const fullAiResponse = `Here is your travel article:
+Part 1: Content details...
+
+\`\`\`json
+{
+  "title": "Con Dao Islands: Whispers of the Wild Ocean",
+  "slug": "con-dao-islands-whispers-of-the-wild-ocean",
+  "excerpt": "A secluded paradise where untouched nature meets quiet colonial history.",
+  "cover_image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200",
+  "tags": ["Con Dao", "Islands", "Beaches"],
+  "content": [
+    { "type": "heading", "level": 2, "text": "Arrival in Archipelago" },
+    { "type": "image", "src": "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200", "alt": "Dam Trau Beach", "caption": "The pristine shoreline of Dam Trau", "aspect": "landscape" },
+    { "type": "paragraph", "text": "Stepping off the turboprop onto the runway..." }
+  ]
+}
+\`\`\`
+Hope you like it!`;
+
+    const jsonArea = screen.getByLabelText(en.editor.aiImportLabel);
+    fireEvent.change(jsonArea, { target: { value: fullAiResponse } });
+    fireEvent.click(screen.getByRole('button', { name: en.editor.aiImportSubmit }));
+
+    await waitFor(() => {
+      expect(screen.getByRole('textbox', { name: 'Story title' })).toHaveValue('Con Dao Islands: Whispers of the Wild Ocean');
+      expect(screen.getByRole('textbox', { name: 'Story URL' })).toHaveValue('con-dao-islands-whispers-of-the-wild-ocean');
+      expect(screen.getByRole('textbox', { name: 'Introduction' })).toHaveValue('A secluded paradise where untouched nature meets quiet colonial history.');
+      expect(screen.getByRole('textbox', { name: /Topic tags/ })).toHaveValue('Con Dao, Islands, Beaches');
+    });
   });
 });

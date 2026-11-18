@@ -2,7 +2,7 @@
 
 import { useActionState, useEffect, useState, type CSSProperties, type FormEvent } from 'react';
 import { useTranslations } from 'next-intl';
-import { AlignLeft, ArrowDown, ArrowLeft, ArrowUp, Check, Eye, GripVertical, Heading, Image as ImageIcon, List, LoaderCircle, Minus, NotebookPen, Plus, Quote, Save, Send, StickyNote, Trash2 } from 'lucide-react';
+import { AlignLeft, ArrowDown, ArrowLeft, ArrowUp, Check, Eye, FileCode, GripVertical, Heading, Image as ImageIcon, List, LoaderCircle, Minus, NotebookPen, Plus, Quote, Save, Send, Sparkles, StickyNote, Trash2 } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import { savePost, type PostActionState } from '@/actions/posts';
 import { createBlock, isImageUrl, moveBlock, parseBlocks, postInputSchema, slugify, type BlogBlock, type BlockType, type PostInput } from '@/lib/blog';
@@ -12,6 +12,7 @@ import BlogContent from '@/components/blog/BlogContent';
 import ImageWithFallback from '@/components/ui/ImageWithFallback';
 import BlockFields from './BlockFields';
 import ImageField from './ImageField';
+import AiPromptModal from './AiPromptModal';
 
 const blockTypes = [
   { type: 'heading', icon: Heading }, { type: 'paragraph', icon: AlignLeft }, { type: 'image', icon: ImageIcon },
@@ -30,6 +31,8 @@ export default function PostEditor({ post, locale }: { post?: PostRow; locale: L
   const [dragged, setDragged] = useState<string | null>(null);
   const [uploads, setUploads] = useState(0);
   const [validationError, setValidationError] = useState(false);
+  const [aiModalOpen, setAiModalOpen] = useState(false);
+  const [aiModalTab, setAiModalTab] = useState<'prompt' | 'import'>('prompt');
   const [state, action, pending] = useActionState<PostActionState, FormData>(savePost.bind(null, locale, post?.id ?? null), {});
   const [original] = useState(() => JSON.stringify(draft));
   const dirty = JSON.stringify(draft) !== original;
@@ -53,6 +56,15 @@ export default function PostEditor({ post, locale }: { post?: PostRow; locale: L
   }, [dirty, pending, t]);
 
   const patch = (values: Partial<PostInput>) => { setDraft((current) => ({ ...current, ...values })); setValidationError(false); };
+  const handleApplyAi = (values: Partial<PostInput>) => {
+    patch(values);
+    if (values.tags) {
+      setTags(values.tags.join(', '));
+    }
+    if (values.slug) {
+      setSlugEdited(true);
+    }
+  };
   const replaceBlock = (block: BlogBlock) => setDraft((current) => ({ ...current, content: current.content.map((item) => item.id === block.id ? block : item) }));
   const reorder = (id: string, index: number) => setDraft((current) => ({ ...current, content: moveBlock(current.content, id, index) }));
   const uploadingChanged = (uploading: boolean) => setUploads((current) => current + (uploading ? 1 : -1));
@@ -76,7 +88,28 @@ export default function PostEditor({ post, locale }: { post?: PostRow; locale: L
         <input type="hidden" name="version" value={post?.version ?? 0} />
         <fieldset disabled={pending} className="min-w-0">
           <div className="mb-6 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-border bg-card p-3 sm:p-4">
-            <div className="flex items-center gap-1 rounded-xl bg-muted p-1"><button type="button" onClick={() => setPreview(false)} aria-pressed={!preview} className={`inline-flex items-center gap-2 rounded-lg px-3 py-2 text-xs font-semibold ${!preview ? 'bg-card text-primary shadow-sm' : 'text-muted-foreground'}`}><NotebookPen className="size-4" />{t('write')}</button><button type="button" onClick={() => setPreview(true)} aria-pressed={preview} className={`inline-flex items-center gap-2 rounded-lg px-3 py-2 text-xs font-semibold ${preview ? 'bg-card text-primary shadow-sm' : 'text-muted-foreground'}`}><Eye className="size-4" />{t('preview')}</button></div>
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="flex items-center gap-1 rounded-xl bg-muted p-1">
+                <button type="button" onClick={() => setPreview(false)} aria-pressed={!preview} className={`inline-flex items-center gap-2 rounded-lg px-3 py-2 text-xs font-semibold ${!preview ? 'bg-card text-primary shadow-sm' : 'text-muted-foreground'}`}><NotebookPen className="size-4" />{t('write')}</button>
+                <button type="button" onClick={() => setPreview(true)} aria-pressed={preview} className={`inline-flex items-center gap-2 rounded-lg px-3 py-2 text-xs font-semibold ${preview ? 'bg-card text-primary shadow-sm' : 'text-muted-foreground'}`}><Eye className="size-4" />{t('preview')}</button>
+              </div>
+              <button
+                type="button"
+                onClick={() => { setAiModalTab('prompt'); setAiModalOpen(true); }}
+                className="inline-flex items-center gap-1.5 rounded-xl border border-primary/25 bg-primary/5 px-3 py-2 text-xs font-semibold text-primary transition-colors hover:border-primary/50 hover:bg-primary/10 focus-visible:outline-2 focus-visible:outline-primary"
+              >
+                <Sparkles className="size-3.5 text-secondary" />
+                <span>{t('aiPromptButton')}</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => { setAiModalTab('import'); setAiModalOpen(true); }}
+                className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-card px-3 py-2 text-xs font-semibold text-foreground shadow-xs transition-colors hover:border-primary hover:text-primary focus-visible:outline-2 focus-visible:outline-primary"
+              >
+                <FileCode className="size-3.5 text-primary" />
+                <span>{t('aiImportButton')}</span>
+              </button>
+            </div>
             <p role="status" className="inline-flex items-center gap-1.5 text-[11px] text-muted-foreground">{pending ? <LoaderCircle className="size-3 animate-spin" /> : dirty ? <span className="size-1.5 rounded-full bg-secondary" /> : <Check className="size-3 text-primary" />}{t(pending ? 'saving' : dirty ? 'unsaved' : 'savedState')}</p>
           </div>
           {(validationError || state.error) && <p role="alert" className="mb-6 rounded-xl border border-secondary/30 bg-secondary/10 p-4 text-sm leading-relaxed text-foreground">{t(validationError ? 'invalid' : state.error!)}</p>}
@@ -105,7 +138,30 @@ export default function PostEditor({ post, locale }: { post?: PostRow; locale: L
                     <label className="mt-5 block border-t border-border pt-3 text-[11px] text-muted-foreground">{t('width')}<input type="range" min={6} max={12} step={1} value={block.width} onChange={(event) => replaceBlock({ ...block, width: Number(event.target.value) })} className="mt-2 block w-full accent-primary" /><span className="mt-1 block">{t('widthHint', { width: block.width })}</span></label>
                   </article>)}
                 </div>
-                {draft.content.length === 0 && <div className="rounded-3xl border border-dashed border-border px-6 py-14 text-center"><Plus className="mx-auto mb-3 size-7 text-secondary" /><p className="text-sm text-muted-foreground">{t('empty')}</p></div>}
+                {draft.content.length === 0 && (
+                  <div className="rounded-3xl border border-dashed border-border px-6 py-14 text-center">
+                    <Plus className="mx-auto mb-3 size-7 text-secondary" />
+                    <p className="text-sm text-muted-foreground">{t('empty')}</p>
+                    <div className="mt-4 flex flex-wrap items-center justify-center gap-2.5">
+                      <button
+                        type="button"
+                        onClick={() => { setAiModalTab('prompt'); setAiModalOpen(true); }}
+                        className="inline-flex items-center gap-1.5 rounded-xl border border-primary/25 bg-primary/5 px-4 py-2 text-xs font-semibold text-primary transition-colors hover:border-primary/50 hover:bg-primary/10"
+                      >
+                        <Sparkles className="size-3.5 text-secondary" />
+                        <span>{t('aiPromptButton')}</span>
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => { setAiModalTab('import'); setAiModalOpen(true); }}
+                        className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-background px-4 py-2 text-xs font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
+                      >
+                        <FileCode className="size-3.5 text-primary" />
+                        <span>{t('aiImportButton')}</span>
+                      </button>
+                    </div>
+                  </div>
+                )}
               </>}
             </div>
             <aside className="min-w-0 space-y-5">
@@ -129,6 +185,14 @@ export default function PostEditor({ post, locale }: { post?: PostRow; locale: L
           </div>
         </fieldset>
       </form>
+      <AiPromptModal
+        isOpen={aiModalOpen}
+        initialTab={aiModalTab}
+        onClose={() => setAiModalOpen(false)}
+        locale={locale}
+        currentTitle={draft.title}
+        onApply={handleApplyAi}
+      />
     </section>
   );
 }
