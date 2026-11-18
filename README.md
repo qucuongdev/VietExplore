@@ -1,5 +1,11 @@
 # VietExplore — Dấu Chân Việt (MVP)
 
+## Editorial workspace
+
+The application includes Supabase email/password sign-in, an admin-only post manager, and a responsive block editor with draft/publish workflows. Published stories appear in the bilingual journal at `/vi/blog` and `/en/blog`.
+
+Follow [the Supabase setup guide](docs/admin-blog/SETUP.md) to apply the database/storage migration, set `.env.local`, and provision an administrator. The [product specification](docs/admin-blog/PRODUCT.md) and [technical specification](docs/admin-blog/TECH.md) describe the feature and its access boundaries. Without backend configuration the public travel guide remains available and sign-in displays an unavailable state.
+
 > **Cẩm nang du lịch biên soạn tinh tế, chất lượng tạp chí trên 34 đơn vị hành chính mới của Việt Nam.**  
 > *An editorial travel discovery website covering Vietnam's 34 newly organized provinces and centrally governed cities.*
 
