@@ -9,6 +9,7 @@
   --primary-foreground: #FFFFFF;
   --primary-hover: #143e35;
   --secondary: #C87956;
+  --secondary-text: #9D5438;
   --secondary-foreground: #FFFFFF;
   --secondary-hover: #b36846;
   --muted: #EFECE6;
@@ -32,6 +33,7 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-primary-hover: var(--primary-hover);
   --color-secondary: var(--secondary);
+  --color-secondary-text: var(--secondary-text);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-secondary-hover: var(--secondary-hover);
   --color-muted: var(--muted);
@@ -53,6 +55,24 @@ body {
 }
 
 /* Reduced motion preference */
+@layer components {
+  .editor-input {
+    @apply block w-full rounded-xl border border-border bg-background px-3.5 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-primary focus:ring-2 focus:ring-primary/15 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .editor-button {
+    @apply inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .editor-icon-button {
+    @apply rounded-lg p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-primary focus-visible:outline-2 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-30;
+  }
+}
+
+@media (min-width: 768px) {
+  .blog-block {
+    grid-column: span var(--block-columns, 12) / span var(--block-columns, 12);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   ::before,

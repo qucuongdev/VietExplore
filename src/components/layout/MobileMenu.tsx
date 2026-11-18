@@ -13,6 +13,7 @@ interface MobileMenuProps {
     explore: string;
     menu: string;
     close: string;
+    blog: string;
   };
 }
 
@@ -40,7 +41,7 @@ export default function MobileMenu({ t }: MobileMenuProps) {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <button
         type="button"
         onClick={() => setIsOpen(true)}
@@ -77,6 +78,7 @@ export default function MobileMenu({ t }: MobileMenuProps) {
               </div>
 
               <nav className="mt-6 flex flex-col gap-2">
+                <Link href="/blog" onClick={closeMenu} className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-primary hover:bg-accent"><Compass className="size-4" />{t.blog}</Link>
                 <Link
                   href="/"
                   onClick={closeMenu}

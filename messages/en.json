@@ -57,6 +57,49 @@
     "imageSources": "Image Provenance & Licenses",
     "copyright": "© 2025 VietExplore. Content copyright belongs to respective authors."
   },
+  "auth": {
+    "login": "Sign in", "logout": "Sign out", "admin": "Workspace",
+    "eyebrow": "The editorial workspace", "title": "Welcome back.",
+    "subtitle": "Sign in to keep telling the stories of Vietnam.",
+    "email": "Email address", "password": "Password", "showPassword": "Show password", "hidePassword": "Hide password",
+    "submit": "Sign in", "pending": "Signing in…", "back": "Back to exploring",
+    "inviteOnly": "Editorial accounts are provided by an administrator. Contact your team for access.",
+    "quote": "Every place has a story worth telling.", "quoteHint": "Capture beautiful moments. Share memorable journeys.",
+    "forbidden": "Your account does not have administrator access. You can still explore and read the journal.",
+    "invalid": "Please enter a valid email address and your password.", "credentials": "The email or password is incorrect.",
+    "unavailable": "Sign-in is currently unavailable. Please try again later.", "rateLimit": "Too many attempts. Please wait a moment and try again."
+  },
+  "admin": {
+    "eyebrow": "VietExplore · Editorial", "workspace": "A space to create", "workspaceHint": "Turn small observations into inspiring journeys.",
+    "posts": "Manage posts", "newPost": "Write a story", "visitSite": "View the journal", "title": "Your stories", "subtitle": "Craft every article. Remember every journey.",
+    "search": "Search by title…", "searchLabel": "Search posts", "filter": "Filter posts", "all": "All statuses", "draft": "Draft", "published": "Published",
+    "postTitle": "Story", "language": "Language", "status": "Status", "updated": "Updated", "edit": "Edit", "delete": "Delete post",
+    "deleteTitle": "Delete this story?", "deleteHint": "“{title}” will be permanently deleted. This action cannot be undone.",
+    "cancel": "Cancel", "deleting": "Deleting…", "deleted": "The post was deleted.", "saved": "Your story was saved.",
+    "emptyTitle": "Your first story is waiting", "emptyHint": "Start with an idea, a few notes, or a favorite photograph.",
+    "noResults": "No matching stories", "noResultsHint": "Try a different keyword or adjust your filters.", "unavailable": "We could not load the stories. Please try again later.",
+    "results": "{count} stories", "previous": "Previous", "next": "Next", "page": "Page {page}", "retry": "Try again"
+  },
+  "editor": {
+    "newTitle": "A new story", "editTitle": "Continue your story", "subtitle": "Shape your ideas into a journey worth reading.", "back": "Back to stories",
+    "write": "Write", "preview": "Preview", "saveDraft": "Save draft", "publish": "Publish story", "savePublished": "Save & update", "unpublish": "Move to drafts", "saving": "Saving…",
+    "title": "Story title", "titlePlaceholder": "A journey to remember…", "slug": "Story URL", "excerpt": "Introduction", "excerptPlaceholder": "A few opening lines to invite readers into your story.",
+    "language": "Story language", "tags": "Topic tags", "tagsHint": "Separate with commas, up to 12 tags.", "cover": "Cover image", "coverHint": "Paste an image URL or upload from your device.", "settings": "Story details",
+    "addBlock": "Add a content block", "addBlockHint": "Drag to reorder, or use the arrow buttons on mobile and keyboard.",
+    "heading": "Heading", "paragraph": "Paragraph", "image": "Image", "quote": "Quote", "list": "List", "callout": "Note", "divider": "Divider",
+    "block": "Block {index}: {type}", "drag": "Drag to reorder", "moveUp": "Move up", "moveDown": "Move down", "remove": "Remove block",
+    "width": "Block width", "widthHint": "{width}/12 columns · full width on mobile", "text": "Content", "level": "Heading level", "attribution": "Quote attribution", "listHint": "One item per line.",
+    "imageUrl": "Image URL", "alt": "Image description", "caption": "Image caption", "aspect": "Image shape", "landscape": "Landscape", "square": "Square", "portrait": "Portrait",
+    "upload": "Upload image", "uploading": "Uploading…", "uploadHint": "JPG, PNG, WebP or AVIF · up to 5 MB", "uploadError": "Could not upload the image. Check the format and size, or try again.", "uploadSuccess": "Image uploaded.", "invalidUrl": "Use a valid HTTPS image URL.",
+    "empty": "Start your story with a content block.", "previewEmpty": "Your preview will appear when you add content blocks.", "unsaved": "Unsaved changes", "leaveConfirm": "You have unsaved changes. Leave this page?", "savedState": "Saved",
+    "invalid": "Check the title (3–160 characters), URL, tags, and content. Published stories need content; images need a URL and description.",
+    "duplicate": "This URL is already used in the selected language. Please choose another.", "conflict": "Someone changed this story elsewhere. Copy your edits before reloading the page.",
+    "unavailable": "We could not save your changes. Your current edits are still here. Please try again.", "blockLimit": "A story can contain up to 100 content blocks."
+  },
+  "blog": {
+    "nav": "Journal", "eyebrow": "The travel journal", "title": "Vietnam, through its stories", "subtitle": "Notes, perspectives, and inspiration for exploring Vietnam with VietExplore.",
+    "read": "Read the story", "empty": "New stories are taking shape", "emptyHint": "Come back soon for fresh stories from our editors.", "back": "All stories", "unavailable": "We could not load the journal. Please try again later.", "published": "Published {date}"
+  },
   "common": {
     "back": "Back",
     "close": "Close",

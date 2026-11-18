@@ -3,10 +3,12 @@ import { Link } from '@/i18n/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
 import MobileMenu from './MobileMenu';
 import { Compass } from 'lucide-react';
+import AccountActions from '@/components/auth/AccountActions';
 
 export default async function Header() {
   const t = await getTranslations('navigation');
   const tCommon = await getTranslations('common');
+  const tBlog = await getTranslations('blog');
 
   return (
     <header className="sticky top-0 z-40 w-full bg-[#F8F7F3]/90 backdrop-blur-md border-b border-[#E2DDD5]/80 transition-colors">
@@ -25,7 +27,7 @@ export default async function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-6">
           <Link
             href="/provinces"
             className="text-sm font-medium text-[#202723] hover:text-[#194D42] transition-colors focus:outline-hidden focus:ring-2 focus:ring-[#194D42] rounded-sm py-1"
@@ -44,10 +46,12 @@ export default async function Header() {
           >
             {t('explore')}
           </Link>
+          <Link href="/blog" className="text-sm font-medium text-[#202723] hover:text-[#194D42] transition-colors focus:outline-hidden focus:ring-2 focus:ring-[#194D42] rounded-sm py-1">{tBlog('nav')}</Link>
         </nav>
 
         {/* Actions & Language Switcher */}
         <div className="flex items-center gap-3">
+          <AccountActions />
           <div className="hidden sm:block">
             <LanguageSwitcher />
           </div>
@@ -60,6 +64,7 @@ export default async function Header() {
               explore: t('explore'),
               menu: t('menu'),
               close: tCommon('close'),
+              blog: tBlog('nav'),
             }}
           />
         </div>
