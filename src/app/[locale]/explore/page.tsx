@@ -1,4 +1,17 @@
 import { Compass, BookOpen, ShieldCheck } from 'lucide-react';
+import { createPageMetadata } from '@/lib/metadata';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return createPageMetadata({
+    locale,
+    path: '/explore',
+    title: locale === 'vi' ? 'Tôn chỉ Biên tập & Chuẩn mực Địa lý' : 'Editorial & Geographic Standards',
+    description: locale === 'vi'
+      ? 'Tìm hiểu tôn chỉ biên tập, chuẩn mực dữ liệu và nguồn ảnh của VietExplore.'
+      : 'Learn about VietExplore’s editorial principles, data standards, and image provenance.',
+  });
+}
 
 export default async function ExplorePage() {
   return (

@@ -10,6 +10,22 @@ import ImageWithFallback from '@/components/ui/ImageWithFallback';
 import { MapPin, Navigation, Sparkles, ShieldCheck, ArrowLeft, Clock, Lightbulb, Compass, Film } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import { Locale } from '@/types/content';
+import { createPageMetadata } from '@/lib/metadata';
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }) {
+  const { slug, locale } = await params;
+  const destination = getDestinationBySlug(slug);
+  if (!destination) notFound();
+  const currentLocale = locale === 'vi' ? 'vi' : 'en';
+  const image = destination.images[0];
+  return createPageMetadata({
+    locale,
+    path: `/destinations/${destination.slug}`,
+    title: destination.name[currentLocale],
+    description: destination.summary[currentLocale],
+    image: image ? { src: image.src, alt: image.alt[currentLocale] } : undefined,
+  });
+}
 
 export function generateStaticParams() {
   const all = getAllDestinations();

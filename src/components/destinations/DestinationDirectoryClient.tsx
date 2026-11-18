@@ -1,20 +1,17 @@
 'use client';
 
-import { useState, useMemo, useTransition } from 'react';
+import { useMemo, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { Destination, Province, Category, Locale } from '@/types/content';
 import DestinationCard from './DestinationCard';
 import { Search, SlidersHorizontal, X, RotateCcw, Compass } from 'lucide-react';
 import { removeVietnameseDiacritics } from '@/lib/utils';
-import { usePathname, useRouter } from '@/i18n/navigation';
 
 interface DestinationDirectoryClientProps {
   destinations: Destination[];
   provinces: Province[];
   categories: Category[];
   locale: Locale;
-  initialQuery?: string;
-  initialCategory?: string;
-  initialProvince?: string;
 }
 
 export default function DestinationDirectoryClient({
@@ -22,30 +19,33 @@ export default function DestinationDirectoryClient({
   provinces,
   categories,
   locale,
-  initialQuery = '',
-  initialCategory = 'all',
-  initialProvince = 'all',
 }: DestinationDirectoryClientProps) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const [, startTransition] = useTransition();
-
-  const [query, setQuery] = useState(initialQuery);
-  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
-  const [selectedProvince, setSelectedProvince] = useState(initialProvince);
+  const searchParams = useSearchParams();
+  // URLSearchParams.get consistently takes the first value, including repeated keys.
+  const urlQuery = searchParams.get('q') ?? '';
+  // Keep typing urgent while Next.js updates its URL subscription in a transition.
+  const [query, setQuery] = useState(urlQuery);
+  const [previousUrlQuery, setPreviousUrlQuery] = useState(urlQuery);
+  if (previousUrlQuery !== urlQuery) {
+    setPreviousUrlQuery(urlQuery);
+    setQuery(urlQuery);
+  }
+  const selectedCategory = searchParams.get('category') || 'all';
+  const selectedProvince = searchParams.get('province') || 'all';
 
   // Sync state with URL query parameters
   const updateUrlParams = (newQuery: string, newCategory: string, newProvince: string) => {
-    startTransition(() => {
-      const params = new URLSearchParams();
-      if (newQuery.trim()) params.set('q', newQuery.trim());
-      if (newCategory && newCategory !== 'all') params.set('category', newCategory);
-      if (newProvince && newProvince !== 'all') params.set('province', newProvince);
+    const url = new URL(window.location.href);
+    // Keep spaces while typing; normalization belongs to the search comparison.
+    if (newQuery) url.searchParams.set('q', newQuery);
+    else url.searchParams.delete('q');
+    if (newCategory && newCategory !== 'all') url.searchParams.set('category', newCategory);
+    else url.searchParams.delete('category');
+    if (newProvince && newProvince !== 'all') url.searchParams.set('province', newProvince);
+    else url.searchParams.delete('province');
 
-      const qs = params.toString();
-      const target = qs ? `${pathname}?${qs}` : pathname;
-      router.replace(target, { scroll: false });
-    });
+    // Next.js integrates the History API with useSearchParams, without a server request.
+    window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
   };
 
   const handleQueryChange = (val: string) => {
@@ -54,19 +54,15 @@ export default function DestinationDirectoryClient({
   };
 
   const handleCategoryChange = (catId: string) => {
-    setSelectedCategory(catId);
     updateUrlParams(query, catId, selectedProvince);
   };
 
   const handleProvinceChange = (provId: string) => {
-    setSelectedProvince(provId);
     updateUrlParams(query, selectedCategory, provId);
   };
 
   const handleResetFilters = () => {
     setQuery('');
-    setSelectedCategory('all');
-    setSelectedProvince('all');
     updateUrlParams('', 'all', 'all');
   };
 

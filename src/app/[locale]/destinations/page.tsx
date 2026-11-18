@@ -6,20 +6,25 @@ import DestinationDirectoryClient from '@/components/destinations/DestinationDir
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { Compass } from 'lucide-react';
 import { Locale } from '@/types/content';
+import { Suspense } from 'react';
+import { createPageMetadata } from '@/lib/metadata';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'destinations' });
+  return createPageMetadata({ locale, path: '/destinations', title: t('title'), description: t('subtitle') });
+}
 
 export default async function DestinationsDirectoryPage({
   params,
-  searchParams,
 }: {
   params: Promise<{ locale: string }>;
-  searchParams: Promise<{ q?: string; category?: string; province?: string }>;
 }) {
   const { locale } = await params;
   const currentLocale = (locale as Locale) || 'vi';
 
-  const { q, category, province } = await searchParams;
-
   const t = await getTranslations('destinations');
+  const common = await getTranslations('common');
 
   const destinations = getAllDestinations();
   const provinces = getAllProvinces();
@@ -48,15 +53,14 @@ export default async function DestinationsDirectoryPage({
       </div>
 
       {/* Client Filter & Listing */}
-      <DestinationDirectoryClient
-        destinations={destinations}
-        provinces={provinces}
-        categories={categories}
-        locale={currentLocale}
-        initialQuery={q || ''}
-        initialCategory={category || 'all'}
-        initialProvince={province || 'all'}
-      />
+      <Suspense fallback={<p role="status">{common('loading')}</p>}>
+        <DestinationDirectoryClient
+          destinations={destinations}
+          provinces={provinces}
+          categories={categories}
+          locale={currentLocale}
+        />
+      </Suspense>
     </div>
   );
 }

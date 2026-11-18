@@ -8,6 +8,21 @@ import ImageWithFallback from '@/components/ui/ImageWithFallback';
 import { MapPin, Compass } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import { Locale } from '@/types/content';
+import { createPageMetadata } from '@/lib/metadata';
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }) {
+  const { slug, locale } = await params;
+  const province = getProvinceBySlug(slug);
+  if (!province) notFound();
+  const currentLocale = locale === 'vi' ? 'vi' : 'en';
+  return createPageMetadata({
+    locale,
+    path: `/provinces/${province.slug}`,
+    title: province.name[currentLocale],
+    description: province.summary[currentLocale],
+    image: province.image ? { src: province.image.src, alt: province.image.alt[currentLocale] } : undefined,
+  });
+}
 
 export function generateStaticParams() {
   const all = getAllProvinces();
