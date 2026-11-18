@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState } from 'react';
 import { ImageAsset, Locale } from '@/types/content';
 import ImageWithFallback from '@/components/ui/ImageWithFallback';
-import { ChevronLeft, ChevronRight, ExternalLink, Camera, Maximize2, X, ZoomIn } from 'lucide-react';
+import ModalDialog from '@/components/ui/ModalDialog';
+import { ChevronLeft, ChevronRight, ExternalLink, Maximize2, X, ZoomIn } from 'lucide-react';
 
 interface DestinationGalleryProps {
   images: ImageAsset[];
@@ -16,9 +17,6 @@ export default function DestinationGallery({
   destinationName,
   locale,
 }: DestinationGalleryProps) {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-
   if (!images || images.length === 0) {
     return (
       <div className="relative aspect-16/9 md:aspect-18/9 max-h-[560px] w-full bg-[#EFECE6] overflow-hidden rounded-t-3xl">
@@ -32,39 +30,29 @@ export default function DestinationGallery({
     );
   }
 
+  return (
+    <GalleryWithImages
+      key={images.map((image) => image.src).join('|')}
+      images={images}
+      destinationName={destinationName}
+      locale={locale}
+    />
+  );
+}
+
+function GalleryWithImages({ images, destinationName, locale }: DestinationGalleryProps) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const activeImage = images[activeIndex] || images[0];
   const total = images.length;
 
-  const handlePrev = useCallback(() => {
+  const handlePrev = () => {
     setActiveIndex((prev) => (prev === 0 ? total - 1 : prev - 1));
-  }, [total]);
+  };
 
-  const handleNext = useCallback(() => {
+  const handleNext = () => {
     setActiveIndex((prev) => (prev === total - 1 ? 0 : prev + 1));
-  }, [total]);
-
-  const handleKeyDown = useCallback(
-    (e: KeyboardEvent) => {
-      if (!isLightboxOpen) return;
-      if (e.key === 'Escape') setIsLightboxOpen(false);
-      if (e.key === 'ArrowLeft') handlePrev();
-      if (e.key === 'ArrowRight') handleNext();
-    },
-    [isLightboxOpen, handlePrev, handleNext]
-  );
-
-  useEffect(() => {
-    if (isLightboxOpen) {
-      document.body.style.overflow = 'hidden';
-      window.addEventListener('keydown', handleKeyDown);
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [isLightboxOpen, handleKeyDown]);
+  };
 
   return (
     <div className="w-full">
@@ -208,12 +196,17 @@ export default function DestinationGallery({
 
       {/* FULLSCREEN LIGHTBOX MODAL */}
       {isLightboxOpen && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={activeImage.alt[locale] || destinationName}
-          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex flex-col justify-between select-none animate-in fade-in duration-200"
-          onClick={() => setIsLightboxOpen(false)}
+        <ModalDialog
+          label={activeImage.alt[locale] || destinationName}
+          className="fixed inset-0 m-0 w-screen h-dvh max-w-none max-h-none border-0 p-0 z-50 bg-black/95 backdrop-blur-md flex flex-col justify-between select-none animate-in fade-in duration-200"
+          onClose={() => setIsLightboxOpen(false)}
+          onKeyDown={(event) => {
+            if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+              event.preventDefault();
+              if (event.key === 'ArrowLeft') handlePrev();
+              else handleNext();
+            }
+          }}
         >
           {/* Lightbox Top Header */}
           <div
@@ -253,6 +246,7 @@ export default function DestinationGallery({
                 fill
                 priority
                 sizes="100vw"
+                objectFit="contain"
                 className="object-contain w-full h-full drop-shadow-2xl"
               />
             </div>
@@ -337,7 +331,7 @@ export default function DestinationGallery({
               </div>
             )}
           </div>
-        </div>
+        </ModalDialog>
       )}
     </div>
   );
